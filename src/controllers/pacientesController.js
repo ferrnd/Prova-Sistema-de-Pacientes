@@ -47,12 +47,12 @@ const createPacientes = (req, res) => {
     historico: historico
   };
 
-  carros.push(novoPaciente);
+  pacientes.push(novoPaciente);
 
   res.status(200).json({
     success: true,
     message: "Ficha do Paciente criada com sucesso.",
-    carro: novoPaciente,
+    paciente: novoPaciente,
   });
 };
 
@@ -61,7 +61,7 @@ const deletePaciente = (req, res) => {
   if (isNaN(id)) {
     return res.status(400).json({
       success: false,
-      message: "Núemero do Paciente não é válido",
+      message: "Número do Paciente não é válido",
     });
   }
 
@@ -76,7 +76,7 @@ const deletePaciente = (req, res) => {
 
   const pacientesFiltrados = pacientes.filter((pacientes) => pacientes.id != id);
 
-  pacientes.splice(0, pascientes.length, ...pacientesFiltrados);
+  pacientes.splice(0, pacientes.length, ...pacientesFiltrados);
 
   res.status(200).json({
     success: true,
@@ -124,7 +124,7 @@ const updatePaciente = (req, res) => {
   res.status(200).json({
     success: true,
     message: "Dados do paciente aualizados com sucesso.",
-    carro: pacienteEditado,
+    paciente: pacienteEditado,
   });
 };
 
