@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import pacientesRoutes from "./src/routes/pacientesRoutes.js"
 import dados from "./src/models/dados.js";
 
+const { idosos } = dados;
 const { pacientes } = dados;
 const serverPort = process.env.PORT || 3000;
 const app = express();
@@ -53,19 +54,40 @@ p.historico.toLocaleLowerCase().includes(historico)
   });
 });
 
-app.get("/pacientes/idade/crianca/:dataNascimento", (req, res) => {
-  let dataNascimento = req.params.dataNascimento.toLocaleLowerCase();
-  const paciente = pacientes.filter((p) =>
-p.dataNascimento.toLocaleLowerCase().includes(dataNascimento)
-  );
-  if (pacientes) {
-    res.status(200).json(paciente);
+app.get("/pacientes/idosos/sim", (req, res) => {
+  const result = pacientes.filter((p) => p.idoso === true);
+  if (result) {
+    res.status(200).json(result);
+  } else {
+    res.status(404)({
+      error: "paciente não encontrado",
+    });
   }
-  res.status(404)({
-    error: "paciente não encontrado.",
-  });
 });
 
+app.get("/pacientes/adultos/sim", (req, res) => {
+  const result = pacientes.filter((p) => p.adulto === true);
+  if (result) {
+    res.status(200).json(result);
+  } else {
+    res.status(404)({
+      error: "paciente não encontrado",
+    });
+  }
+});
+
+app.get("/pacientes/jovens/sim", (req, res) => {
+  const result = pacientes.filter((p) => p.jovem === true);
+  if (result) {
+    res.status(200).json(result);
+  } else {
+    res.status(404)({
+      error: "paciente não encontrado",
+    });
+  }
+});
+
+app.use("/idosos", pacientesRoutes);
 app.use("/pacientes", pacientesRoutes);
 
 app.listen(serverPort, () => {

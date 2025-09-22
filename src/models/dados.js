@@ -7,7 +7,8 @@ let pacientes = [
       "telefone": "(11) 98765-4321",
       "endereco": "Rua das Flores, 123 - Apto 45, São Paulo - SP",
       "convenio": "Amil Saúde",
-      "historico": "Acompanhamento de hipertensão, última consulta em 10/09/2025."
+      "historico": "Acompanhamento de hipertensão, última consulta em 10/09/2025.",
+      "adulto": true
     },
     {
       "id": 2,
@@ -17,7 +18,8 @@ let pacientes = [
       "telefone": "(21) 99876-5432",
       "endereco": "Avenida Atlântica, 500, Rio de Janeiro - RJ",
       "convenio": "Unimed",
-      "historico": "Consulta de rotina, sem queixas. Exames laboratoriais solicitados."
+      "historico": "Consulta de rotina, sem queixas. Exames laboratoriais solicitados.",
+      "adulto": true
     },
     {
       "id": 3,
@@ -27,7 +29,8 @@ let pacientes = [
       "telefone": "(31) 97654-3210",
       "endereco": "Rua Belo Horizonte, 789, Belo Horizonte - MG",
       "convenio": "Bradesco Saúde",
-      "historico": "Tratamento para alergia sazonal. Medicamento receitado: anti-histamínico."
+      "historico": "Tratamento para alergia sazonal. Medicamento receitado: anti-histamínico.",
+      "jovem": true
     },
     {
       "id": 4,
@@ -37,7 +40,8 @@ let pacientes = [
       "telefone": "(41) 96543-2109",
       "endereco": "Rua do Comércio, 100, Curitiba - PR",
       "convenio": "SulAmérica",
-      "historico": "Revisão pós-operatória de cirurgia no joelho, boa recuperação."
+      "historico": "Revisão pós-operatória de cirurgia no joelho, boa recuperação.",
+      "adulto": true
     },
     {
       "id": 5,
@@ -47,7 +51,8 @@ let pacientes = [
       "telefone": "(51) 95432-1098",
       "endereco": "Rua dos Andradas, 250, Porto Alegre - RS",
       "convenio": "Particular",
-      "historico": "Avaliação cardiológica completa. Laudo do eletrocardiograma normal."
+      "historico": "Avaliação cardiológica completa. Laudo do eletrocardiograma normal.",
+      "idoso": true
     },
     {
       "id": 6,
@@ -57,7 +62,8 @@ let pacientes = [
       "telefone": "(11) 91234-5678",
       "endereco": "Rua das Palmeiras, 300, São Paulo - SP",
       "convenio": "Amil Saúde",
-      "historico": "Consulta ginecológica de rotina, exames de Papanicolau e ultrassom solicitados."
+      "historico": "Consulta ginecológica de rotina, exames de Papanicolau e ultrassom solicitados.",
+      "adulto": true
     },
     {
       "id": 7,
@@ -67,7 +73,8 @@ let pacientes = [
       "telefone": "(21) 92345-6789",
       "endereco": "Rua Getúlio Vargas, 77, Niterói - RJ",
       "convenio": "Bradesco Saúde",
-      "historico": "Acompanhamento de diabetes tipo 2. Ajuste na dose de medicação oral."
+      "historico": "Acompanhamento de diabetes tipo 2. Ajuste na dose de medicação oral.",
+      "adulto": true
     },
     {
       "id": 8,
@@ -77,7 +84,8 @@ let pacientes = [
       "telefone": "(31) 93456-7890",
       "endereco": "Avenida Afonso Pena, 1500, Belo Horizonte - MG",
       "convenio": "SulAmérica",
-      "historico": "Dor de cabeça recorrente. Encaminhada para neurologista."
+      "historico": "Dor de cabeça recorrente. Encaminhada para neurologista.",
+      "adulto": true
     },
     {
       "id": 9,
@@ -87,7 +95,8 @@ let pacientes = [
       "telefone": "(41) 94567-8901",
       "endereco": "Rua Cândido de Abreu, 950, Curitiba - PR",
       "convenio": "Unimed",
-      "historico": "Check-up anual, exames de sangue e urina em dia. Tudo normal."
+      "historico": "Check-up anual, exames de sangue e urina em dia. Tudo normal.",
+      "idoso": true
     },
     {
       "id": 10,
@@ -97,7 +106,8 @@ let pacientes = [
       "telefone": "(51) 95678-9012",
       "endereco": "Rua Coronel Fernando Machado, 40, Porto Alegre - RS",
       "convenio": "Particular",
-      "historico": "Vacinação de rotina, segunda dose da vacina contra HPV aplicada."
+      "historico": "Vacinação de rotina, segunda dose da vacina contra HPV aplicada.",
+      "jovem": true
     }
   ];
 
