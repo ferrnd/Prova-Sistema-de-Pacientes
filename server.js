@@ -1,9 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
-import pacientesRoutes from "./src/routes/pacientesRoutes.js"
+import pacientesRoutes from "./src/routes/pacientesRoutes.js";
 import dados from "./src/models/dados.js";
 
-const { idosos } = dados;
 const { pacientes } = dados;
 const serverPort = process.env.PORT || 3000;
 const app = express();
@@ -18,7 +17,7 @@ app.get("/", (req, res) => {
 app.get("/pacientes/convenio/:convenio", (req, res) => {
   let convenio = req.params.convenio.toLocaleLowerCase();
   const paciente = pacientes.filter((p) =>
-p.convenio.toLocaleLowerCase().includes(convenio)
+    p.convenio.toLocaleLowerCase().includes(convenio)
   );
   if (pacientes) {
     res.status(200).json(paciente);
@@ -31,7 +30,7 @@ p.convenio.toLocaleLowerCase().includes(convenio)
 app.get("/pacientes/cidade/:endereco", (req, res) => {
   let endereco = req.params.endereco.toLocaleLowerCase();
   const paciente = pacientes.filter((p) =>
-p.endereco.toLocaleLowerCase().includes(endereco)
+    p.endereco.toLocaleLowerCase().includes(endereco)
   );
   if (pacientes) {
     res.status(200).json(paciente);
@@ -44,7 +43,7 @@ p.endereco.toLocaleLowerCase().includes(endereco)
 app.get("/pacientes/historico/:historico", (req, res) => {
   let historico = req.params.historico.toLocaleLowerCase();
   const paciente = pacientes.filter((p) =>
-p.historico.toLocaleLowerCase().includes(historico)
+    p.historico.toLocaleLowerCase().includes(historico)
   );
   if (pacientes) {
     res.status(200).json(paciente);
