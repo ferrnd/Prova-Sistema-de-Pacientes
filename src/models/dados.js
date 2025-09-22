@@ -100,3 +100,5 @@ let pacientes = [
       "historico": "Vacinação de rotina, segunda dose da vacina contra HPV aplicada."
     }
   ];
+
+  export default { pacientes };
