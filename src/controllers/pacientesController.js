@@ -19,15 +19,16 @@ const getPacientesById = (req, res) => {
   if (pacientes) {
     res.status(200).json(paciente);
   } else {
-     return res.status(404).json({ 
+    return res.status(404).json({
       success: false,
-      message: `Paciente número ${id} não existe`, 
+      message: `Paciente número ${id} não existe`,
     });
   }
 };
 
 const createPacientes = (req, res) => {
-  const { nome, cpf, dataNascimento, telefone, endereco, convenio, historico} = req.body;
+  const { nome, cpf, dataNascimento, telefone, endereco, convenio, historico } =
+    req.body;
 
   if (!nome) {
     return res.status(400).json({
@@ -44,7 +45,7 @@ const createPacientes = (req, res) => {
     telefone: telefone,
     endereco: endereco,
     convenio: convenio,
-    historico: historico
+    historico: historico,
   };
 
   pacientes.push(novoPaciente);
@@ -74,7 +75,9 @@ const deletePaciente = (req, res) => {
     });
   }
 
-  const pacientesFiltrados = pacientes.filter((pacientes) => pacientes.id != id);
+  const pacientesFiltrados = pacientes.filter(
+    (pacientes) => pacientes.id != id
+  );
 
   pacientes.splice(0, pacientes.length, ...pacientesFiltrados);
 
@@ -86,7 +89,8 @@ const deletePaciente = (req, res) => {
 
 const updatePaciente = (req, res) => {
   const id = parseInt(req.params.id);
-  const { nome, cpf, dataNascimento, telefone, endereco, convenio, historico } = req.body;
+  const { nome, cpf, dataNascimento, telefone, endereco, convenio, historico } =
+    req.body;
   const idParaEditar = id;
 
   if (isNaN(idParaEditar)) {
@@ -96,7 +100,9 @@ const updatePaciente = (req, res) => {
     });
   }
 
-  const pacienteExiste = pacientes.find((paciente) => paciente.id === idParaEditar);
+  const pacienteExiste = pacientes.find(
+    (paciente) => paciente.id === idParaEditar
+  );
   if (!pacienteExiste) {
     return res.status(404).json({
       success: false,
@@ -113,14 +119,16 @@ const updatePaciente = (req, res) => {
           ...(dataNascimento && { dataNascimento: parseInt(dataNascimento) }),
           ...(telefone && { telefone }),
           ...(endereco && { endereco }),
-          ...(convenio && {convenio}),
-          ...(historico && {historico})
+          ...(convenio && { convenio }),
+          ...(historico && { historico }),
         }
       : pacientes
   );
 
   pacientes.splice(0, pacientes.length, ...pacienteAualizados);
-  const pacienteEditado = pacientes.find((paciente) => paciente.id === idParaEditar);
+  const pacienteEditado = pacientes.find(
+    (paciente) => paciente.id === idParaEditar
+  );
   res.status(200).json({
     success: true,
     message: "Dados do paciente aualizados com sucesso.",
@@ -128,4 +136,10 @@ const updatePaciente = (req, res) => {
   });
 };
 
-export { getAllPacientes, getPacientesById, createPacientes, deletePaciente, updatePaciente };
+export {
+  getAllPacientes,
+  getPacientesById,
+  createPacientes,
+  deletePaciente,
+  updatePaciente,
+};
