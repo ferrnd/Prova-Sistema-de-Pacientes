@@ -28,7 +28,7 @@ p.convenio.toLocaleLowerCase().includes(convenio)
   });
 });
 
-app.get("/pacientes/endereco/:endereco", (req, res) => {
+app.get("/pacientes/cidade/:endereco", (req, res) => {
   let endereco = req.params.endereco.toLocaleLowerCase();
   const paciente = pacientes.filter((p) =>
 p.endereco.toLocaleLowerCase().includes(endereco)
